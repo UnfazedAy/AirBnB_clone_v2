@@ -4,10 +4,9 @@ sudo apt update
 sudo apt install -y nginx
 sudo mkdir -p /data/web_static/releases/test/
 sudo mkdir -p /data/web_static/shared/
-echo 'Hi, I'm Ayomide Soniyi, a student of alx' > index.html
-sudo mv index.html /data/web_static/releases/test/
+echo 'Hi, I'\''m Ayomide Soniyi, a student of alx' > /data/web_static/releases/test/index.html
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
-sudo chown -hR ubuntu:ubuntu /data/
+sudo chown -R ubuntu:ubuntu /data/
 CONFIG="server {
         listen 80 default_server;
         listen [::]:80 default_server;
