@@ -11,7 +11,7 @@ from os.path import isdir
 
 
 def do_pack():
-    """ Generates a .tgz file """
+    """Generates a .tgz file"""
     try:
         date = datetime.now()
         current_date = date.strftime("%y%m%d%H%M%S")
