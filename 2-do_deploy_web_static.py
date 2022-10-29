@@ -16,6 +16,11 @@ def do_deploy(archive_path):
     if os.path.exists(archive_path) is False:
         return False
 
+    data_path = '/data/web_static/releases/'
+    tmp = archive_path.split('.')[0]
+    name = tmp.split('/')[1]
+    dest = data_path + name
+
     try:
         put(archive_path, '/tmp')
         run('sudo mkdir -p {}'.format(dest))
