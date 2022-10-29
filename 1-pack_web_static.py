@@ -8,16 +8,22 @@ from fabric.api import local, runs_once
 @runs_once
 def do_pack():
     """Archives the static files."""
-    if os.path.isdir("versions") is False:
+    if not os.path.isdir("versions"):
         os.mkdir("versions")
     d_time = datetime.now()
-    current_date = d_time.strftime("%y%m%d%H%M%S")
-    output = (f"versions/web_static_{current_date}.tgz")
+    output = "versions/web_static_{}{}{}{}{}{}.tgz".format(
+        d_time.year,
+        d_time.month,
+        d_time.day,
+        d_time.hour,
+        d_time.minute,
+        d_time.second
+    )
     try:
-        print(f"Packing web_static to {output}")
-        local(f"tar -cvzf {output} web_static")
+        print("Packing web_static to {}".format(output))
+        local("tar -cvzf {} web_static".format(output))
         size = os.stat(output).st_size
-        print(f"web_static packed: {output} -> {size} Bytes")
+        print("web_static packed: {} -> {} Bytes".format(output, size))
     except Exception:
         output = None
     return output
