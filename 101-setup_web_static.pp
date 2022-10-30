@@ -52,7 +52,22 @@ file { '/data/web_static/shared':
 
 file { '/data/web_static/releases/test/index.html':
   ensure  => 'present',
-  content => "Holberton School Puppet\n"
+  content => "<!DOCTYPE html>
+<html lang='en-US'>
+	<head>
+		<meta charset=\"utf-8\">
+		<meta name=\"description\" content=\"AirBnB Clone\">
+		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+		<title>AirBnB Clone</title>
+	</head>
+	<body>
+		<header>
+			<h1>AirBnB</h1>
+		</header>
+		<h2>Welcome to AirBnB!</h2>
+	<body>
+</html>
+\n"
 } ->
 
 file { '/data/web_static/current':
@@ -74,7 +89,7 @@ file { '/var/www/html':
 
 file { '/var/www/html/index.html':
   ensure  => 'present',
-  content => "Holberton School Nginx\n"
+  content => "Hello world!\n"
 } ->
 
 file { '/var/www/html/404.html':
@@ -84,7 +99,7 @@ file { '/var/www/html/404.html':
 
 file { '/etc/nginx/sites-available/default':
   ensure  => 'present',
-  content => $nginx_conf
+  content => $config
 } ->
 
 exec { 'nginx restart':
