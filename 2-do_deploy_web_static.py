@@ -32,4 +32,4 @@ def do_deploy(archive_path):
         run('sudo ln -s {} /data/web_static/current'.format(dest))
         return True
     except Exce:
-        return False 
+        return False
