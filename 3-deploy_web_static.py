@@ -57,7 +57,7 @@ def do_deploy(archive_path):
 
 def deploy():
     """Compress and upload files to remote server."""
-    path = do_pack
+    path = do_pack()
     print(path)
     if path is None:
         return False
