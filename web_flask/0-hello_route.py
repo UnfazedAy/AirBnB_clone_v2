@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-def hello_page():
+def hello_hbnb():
     """
     Displays “Hello HBNB!”
     """
@@ -16,4 +16,4 @@ def hello_page():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5000)
