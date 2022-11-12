@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 """
-A python script that uses the flask web-framework 
+A python script that uses the flask web-framework
 web application must be listening on 0.0.0.0, port 5000
 """
 from flask import Flask
