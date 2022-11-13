@@ -24,13 +24,10 @@ def hbnb_page():
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def C_is_fun(text):
-    """
-    Display “C ” followed by the value of the text variable
-    replaces underscore _ symbols with a space
-    """
+def c_text(text):
+    """prints C followed by <text> content"""
     text = text.replace("_", " ")
-    return (f"C {text}")
+    return "C %s" % text
 
 
 if __name__ == '__main__':
