@@ -33,9 +33,9 @@ def c_text(text):
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def python_route(text="is cool"):
-    """prints C followed by <text> content"""
+    """prints Python followed by <text> content"""
     text = text.replace("_", " ")
-    return ("python {}".format(text))
+    return ("Python {}".format(text))
 
 
 if __name__ == '__main__':
